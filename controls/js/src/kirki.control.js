@@ -289,6 +289,63 @@ kirki = jQuery.extend( kirki, {
 					placeholder: control.params.placeholder
 				} ) );
 			}
+		},
+
+		'kirki-background': {
+
+			/**
+			 * Init the control.
+			 *
+			 * @since 3.0.17
+			 * @param {Object} control - The customizer control object.
+			 * @returns {null}
+			 */
+			init: function( control ) {
+				var self = this;
+
+				// Render the template.
+				self.template( control );
+
+				// Init color control.
+				kirki.input.color.init( {
+					id: control.id + '[background-color]',
+					params: {}
+				} );
+			},
+
+			/**
+			 * Render the template.
+			 *
+			 * @since 3.0.17
+			 * @param {Object}  control - The customizer control object.
+			 * @param {Object}  control.params - The control parameters.
+			 * @param {string}  control.params.label - The control label.
+			 * @param {string}  control.params.description - The control description.
+			 * @param {string}  control.params.inputAttrs - extra input arguments.
+			 * @param {Object}  control.params.default - The default value.
+			 * @param {Object}  control.params.choices - The choices for the select dropdown.
+			 * @param {string}  control.id - The setting.
+			 * @returns {null}
+			 */
+			template: function( control ) {
+
+				// Add label & descrioption.
+				control.container.append( wp.template( 'kirki-input-parts-header' )( {
+					label: control.params.label,
+					description: control.params.description
+				} ) );
+
+				// Add color control.
+				control.container.append( wp.template( 'kirki-input-color' )( {
+					label: '',
+					description: kirkiL10n.backgroundColor,
+					'data-id': control.id + '[background-color]',
+					mode: control.params.mode,
+					'data-default-color': ( control.params.default['background-color'] ) ? control.params.default['background-color'] : '',
+					'data-alpha': true,
+					value: kirki.setting.get( control.id + '[background-color]' )
+				} ) );
+			}
 		}
 	}
 } );

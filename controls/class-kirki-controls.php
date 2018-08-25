@@ -29,6 +29,7 @@ class Kirki_Controls {
 		'radio',
 		'select',
 		'textarea',
+		'parts-header',
 	);
 
 	/**

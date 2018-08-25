@@ -35,7 +35,7 @@ class Kirki_Control_Background extends Kirki_Control_Base {
 	 *
 	 * @access protected
 	 */
-	protected function content_template() {
+	protected function contenst_template() {
 		?>
 		<label>
 			<span class="customize-control-title">{{{ data.label }}}</span>

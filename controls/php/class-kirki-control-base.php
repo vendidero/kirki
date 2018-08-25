@@ -136,6 +136,7 @@ class Kirki_Control_Base extends WP_Customize_Control {
 				'googleFonts'          => esc_attr__( 'Google Fonts', 'kirki' ),
 				'defaultCSSValues'     => esc_attr__( 'CSS Defaults', 'kirki' ),
 				'defaultBrowserFamily' => esc_attr__( 'Default Browser Font-Family', 'kirki' ),
+				'backgroundColor'      => esc_attr__( 'Background Color', 'kirki' ),
 			)
 		);
 
